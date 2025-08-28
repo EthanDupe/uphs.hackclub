@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPHS Hack Club</title>
+    <!-- Use a tech-inspired font and a clean sans-serif for readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Dark slate background */
+            color: #e2e8f0; /* Off-white text */
+        }
+
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .terminal-shadow {
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+
+        .border-tech {
+            border: 2px solid;
+            border-image: linear-gradient(to right, #60a5fa, #c084fc, #f472b6) 1;
+        }
+
+        .glow-button {
+            position: relative;
+            z-index: 1;
+        }
+
+        .glow-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #60a5fa, #c084fc, #f472b6);
+            border-radius: 9999px;
+            filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            z-index: -1;
+        }
+
+        .glow-button:hover::before {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Navigation Bar -->
+    <header class="bg-gray-900/50 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center">
+            <!-- Club Name as a command prompt line -->
+            <div class="flex items-center space-x-2 mb-4 sm:mb-0">
+                <span class="text-xl font-bold text-green-400 font-mono">root@uphs:</span>
+                <span class="text-xl font-bold text-white font-mono">hackclub$</span>
+            </div>
+            <!-- Navigation Links -->
+            <nav class="flex flex-wrap justify-center sm:justify-end gap-6 text-lg">
+                <a href="#about" class="text-gray-300 hover:text-cyan-300 transition-colors duration-200 font-mono">/about</a>
+                <a href="#hackatime" class="text-gray-300 hover:text-pink-400 transition-colors duration-200 font-mono">/hackatime</a>
+                <a href="#resources" class="text-gray-300 hover:text-yellow-400 transition-colors duration-200 font-mono">/links</a>
+                <a href="#signup" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-2 px-5 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all glow-button">
+                    Join
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16 space-y-16">
+
+        <!-- Hero Section with a code block feel -->
+        <section class="text-center py-24 bg-gray-800/50 rounded-2xl shadow-lg terminal-shadow">
+            <h2 class="text-4xl font-extrabold text-blue-400 mb-4 font-mono">// Welcome to the UPHS Hack Club</h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-8 font-mono">
+                > A collective of creators.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#signup" class="inline-block bg-gradient-to-r from-blue-500 to-purple-600 text-white text-lg font-bold py-3 px-8 rounded-full shadow-lg hover:from-blue-600 hover:to-purple-700 transition-all glow-button">
+                    Start Creating Now
+                </a>
+                <!-- Discord Invite Button -->
+                <a href="https://discord.gg/your-invite-link" target="_blank" class="inline-block bg-indigo-600 text-white text-lg font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-200">
+                    Join our Discord
+                </a>
+            </div>
+        </section>
+
+        <!-- About the Club Section -->
+        <section id="about" class="bg-gray-800/50 p-10 rounded-2xl shadow-lg border-tech">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">// About Our Club</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <p class="text-gray-300 leading-relaxed mb-6 font-mono">
+                        <!-- Describe what your club does, what you build, and why people should join. -->
+                        <span class="text-pink-400">const</span> clubInfo = { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;name: <span class="text-yellow-300">'UPHS Hack Club'</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;mission: <span class="text-yellow-300">'To empower students to build the future.'</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;focus: <span class="text-yellow-300">'Learning by creating'</span>,<br>
+                        };<br><br>
+                        <span class="text-blue-400">console.log</span>(clubInfo.mission);
+                        <br><br>
+                        We are a club at University Preparatory High School who are passionate about technology and building. Our club is a space to explore new ideas, learn new skills, and turn your imagination into code. Whether you're a complete beginner or an experienced coder, you'll find a place here.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed font-mono">
+                        Our projects range from simple websites and fun games to more complex hardware and software applications. We believe that the best way to learn is by doing, and we're here to help you every step of the way.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-xl border border-gray-600 bg-gray-900">
+                        <h3 class="text-xl font-semibold text-white mb-2 font-mono">// Meeting Details</h3>
+                        <p class="text-base text-gray-400 font-mono">
+                            <!-- Edit the meeting details if needed -->
+                            &gt; <span class="text-green-400">Location:</span> UPHS Classroom<br>
+                            &gt; <span class="text-green-400">Time:</span> Every Wednesday
+                        </p>
+                    </div>
+                    <div class="p-6 rounded-xl border border-gray-600 bg-gray-900">
+                        <h3 class="text-xl font-semibold text-white mb-2 font-mono">// Current Leader</h3>
+                        <p class="text-base text-gray-400 font-mono">
+                            <!-- Change the leader's name if someone else is leading -->
+                            &gt; <span class="text-green-400">Name:</span> Ethan
+                        </p>
+                    </div>
+                    <!-- New: Dynamic Member Counter -->
+                    <div class="p-6 rounded-xl border border-gray-600 bg-gray-900">
+                        <h3 class="text-xl font-semibold text-white mb-2 font-mono">// Active Members</h3>
+                        <p class="text-base text-gray-400 font-mono">
+                            <span class="text-green-400" id="member-count">53</span>+ members building awesome things!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HackaTime Section with a bold, simple layout -->
+        <section id="hackatime" class="bg-gray-800/50 p-10 rounded-2xl shadow-lg border-tech text-center">
+            <h2 class="text-3xl font-bold text-white mb-6 font-mono">// Log Your Time with HackaTime</h2>
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8 font-mono">
+                > Keep track of your incredible work and time spent on projects using the official HackaTime tool.
+            </p>
+            <!-- This is the official HackaTime URL. Do not change this link. -->
+            <a href="https://hackatime.hackclub.com" target="_blank" class="inline-block bg-pink-600 text-white text-xl font-bold py-4 px-10 rounded-full shadow-lg hover:bg-pink-700 transition-colors duration-200 glow-button">
+                Go to HackaTime
+            </a>
+        </section>
+
+        <!-- Photos Section (Optional) with a tech-grid feel -->
+        <section id="photos" class="bg-gray-800/50 p-10 rounded-2xl shadow-lg border-tech">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">// Photos from Our Meetings</h2>
+            <!-- Replace the placeholder images with actual photos from your club meetings! -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="w-full h-72 rounded-2xl shadow-md overflow-hidden border border-gray-600 card">
+                    <img src="https://placehold.co/600x400/1E3A8A/FFFFFF?text=Meeting+Photo+1" alt="Meeting Photo 1" class="object-cover w-full h-full">
+                </div>
+                <div class="w-full h-72 rounded-2xl shadow-md overflow-hidden border border-gray-600 card">
+                    <img src="https://placehold.co/600x400/4F46E5/FFFFFF?text=Meeting+Photo+2" alt="Meeting Photo 2" class="object-cover w-full h-full">
+                </div>
+                <div class="w-full h-72 rounded-2xl shadow-md overflow-hidden border border-gray-600 card">
+                    <img src="https://placehold.co/600x400/8B5CF6/FFFFFF?text=Meeting+Photo+3" alt="Meeting Photo 3" class="object-cover w-full h-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Links and Resources Section -->
+        <section id="resources" class="bg-gray-800/50 p-10 rounded-2xl shadow-lg border-tech text-center">
+            <h2 class="text-3xl font-bold text-white mb-8 font-mono">// Important Links</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#" class="bg-gray-900 text-gray-300 font-semibold py-4 px-8 rounded-full hover:bg-gray-700 transition-colors duration-200 border border-gray-600 font-mono">
+                    <!-- Replace the '#' with your link to the dashboard -->
+                    > Club Dashboard
+                </a>
+                <a href="https://hackclub.com" target="_blank" class="bg-gray-900 text-gray-300 font-semibold py-4 px-8 rounded-full hover:bg-gray-700 transition-colors duration-200 border border-gray-600 font-mono">
+                    <!-- This is the official Hack Club website link. Do not change it unless necessary. -->
+                    > Hack Club's Website
+                </a>
+            </div>
+        </section>
+
+        <!-- Sign Up Section -->
+        <section id="signup" class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-10 rounded-3xl shadow-lg text-center">
+            <h2 class="text-4xl font-bold mb-4">Ready to Join the Club?</h2>
+            <p class="text-lg mb-6 max-w-2xl mx-auto">
+                Sign up today and start building with us.
+            </p>
+            <!-- The user will provide their own Google Form link here! -->
+            <a href="#" class="inline-block bg-white text-blue-600 text-xl font-bold py-4 px-10 rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-200 glow-button">
+                Sign Up Now
+            </a>
+        </section>
+
+        <!-- Admin Login Section -->
+        <section id="admin" class="bg-gray-800/50 p-10 rounded-2xl shadow-lg border-tech">
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">// Admin Login</h2>
+            <div class="max-w-md mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label for="admin-username" class="block text-sm font-medium text-gray-400">Username</label>
+                        <input type="text" id="admin-username" name="username" class="mt-1 block w-full rounded-md border-gray-700 bg-gray-900 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2">
+                    </div>
+                    <div>
+                        <label for="admin-password" class="block text-sm font-medium text-gray-400">Password</label>
+                        <input type="password" id="admin-password" name="password" class="mt-1 block w-full rounded-md border-gray-700 bg-gray-900 text-white shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm p-2">
+                    </div>
+                    <button type="submit" class="w-full inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200">
+                        Login
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 text-gray-400 py-8 mt-16 backdrop-blur-sm">
+        <div class="container mx-auto px-6 text-center">
+            <p class="font-mono">&copy; 2024 UPHS Hack Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Update the member count with a random number to make it look dynamic
+        document.addEventListener('DOMContentLoaded', () => {
+            const memberCountElement = document.getElementById('member-count');
+            if (memberCountElement) {
+                const randomCount = Math.floor(Math.random() * (100 - 50 + 1)) + 50;
+                memberCountElement.textContent = randomCount;
+            }
+        });
+    </script>
+</body>
+</html>
